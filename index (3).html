@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ясновидящая Селена — приворот, снятие порчи, гадание</title>
+<meta name="description" content="Ясновидящая и ведунья Селена. Более 25 лет практики. Приворот, снятие порчи, возврат любимых, гадание. Пишите в WhatsApp или Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0810;
+    --bg2: #100D1A;
+    --purple: #6B3FA0;
+    --purple-light: #9B6FD0;
+    --purple-glow: rgba(107,63,160,0.3);
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --text: #E8E0F0;
+    --text-soft: rgba(232,224,240,0.6);
+    --line: rgba(232,224,240,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  #stars-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* ====== NAV ====== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,8,16,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--purple);
+    color: var(--text);
+    padding: 10px 22px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--purple-light); }
+  @media (max-width: 700px) { .nav-links { display: none; } }
+
+  /* ====== HERO ====== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(107,63,160,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 80px 0;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .hero-tag::before {
+    content: '✦';
+    font-size: 10px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95;
+    margin-bottom: 8px;
+  }
+  .hero-title .italic {
+    font-style: italic;
+    color: var(--purple-light);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    max-width: 420px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    padding: 14px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  .btn-wa:hover { opacity: 0.85; }
+
+  .btn-tg {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    padding: 14px 26px;
+    font-size: 14px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn-tg:hover { border-color: var(--purple-light); color: var(--purple-light); }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold);
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-top: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Фото-блок */
+  .hero-photo {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #1A1028, #0D0A18);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .hero-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(107,63,160,0.3) 0%, transparent 70%);
+  }
+  .hero-photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    gap: 12px;
+  }
+  .photo-icon { font-size: 40px; opacity: 0.3; }
+
+  .hero-photo-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(107,63,160,0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(155,111,208,0.3);
+    padding: 10px 16px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--text);
+  }
+
+  @media (max-width: 800px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-photo { aspect-ratio: 4/3; }
+  }
+
+  /* ====== SERVICES ====== */
+  section { padding: 100px 0; position: relative; z-index: 1; }
+
+  .section-tag {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::before { content: '✦'; font-size: 10px; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.05;
+    margin-bottom: 56px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--purple-light);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .service-card {
+    background: var(--bg2);
+    padding: 40px 32px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .service-card:hover {
+    background: rgba(107,63,160,0.2);
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 32px rgba(107,63,160,0.25);
+  }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,8,16,0.85);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 24px;
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal {
+    background: var(--bg2);
+    border: 1px solid rgba(107,63,160,0.4);
+    max-width: 540px;
+    width: 100%;
+    padding: 48px;
+    position: relative;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.3s ease;
+  }
+  .modal-overlay.active .modal {
+    transform: translateY(0) scale(1);
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-soft);
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--text); }
+  .modal-icon { font-size: 40px; margin-bottom: 20px; }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .modal-desc {
+    font-size: 15px;
+    color: var(--text-soft);
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+  .modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--purple);
+    color: var(--text);
+    padding: 14px 28px;
+    font-size: 14px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .modal-btn:hover { background: var(--purple-light); }
+
+  .service-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .service-desc {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 800px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ====== ABOUT ====== */
+  .about-bg {
+    background: var(--bg2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-text {
+    font-size: 16px;
+    color: var(--text-soft);
+    line-height: 1.85;
+  }
+  .about-text p { margin-bottom: 20px; }
+  .about-text strong { color: var(--text); font-weight: 500; }
+
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--purple-light);
+    border-left: 2px solid var(--purple);
+    padding-left: 24px;
+    margin-top: 32px;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .about-stat {
+    background: var(--bg);
+    padding: 32px 28px;
+  }
+  .about-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .about-stat-label {
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-top: 8px;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 800px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ====== REVIEWS ====== */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--bg2);
+    border: 1px solid var(--line);
+    padding: 32px 28px;
+    position: relative;
+  }
+  .review-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    color: var(--purple);
+    opacity: 0.4;
+    line-height: 1;
+  }
+  .review-text {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .review-stars {
+    color: var(--gold);
+    font-size: 13px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .review-author {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 800px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ====== HOW IT WORKS ====== */
+  .how-bg {
+    background: var(--bg2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .step {
+    background: var(--bg);
+    padding: 36px 28px;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--purple);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 800px) {
+    .steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+
+  /* ====== CTA ====== */
+  .cta-section {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(107,63,160,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .cta-title em { font-style: italic; color: var(--purple-light); }
+  .cta-sub {
+    font-size: 16px;
+    color: var(--text-soft);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+  .cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-soft);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+<canvas id="stars-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">✦ Селена</div>
+    <div class="nav-links">
+      <a href="#services">Услуги</a>
+      <a href="#about">О Селене</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Связь</a>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=79171698545&text=Здравствуйте" class="nav-cta" target="_blank">Написать сейчас</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Ясновидящая и ведунья</div>
+        <h1 class="hero-title">
+          Ясновидящая
+          <span class="italic">Селена</span>
+        </h1>
+        <p class="hero-sub">Более 25 лет помогаю людям вернуть любовь, снять порчу и изменить ход судьбы. Консультация — в день обращения.</p>
+        <div class="hero-btns">
+          <a href="https://api.whatsapp.com/send?phone=79171698545&text=Здравствуйте" target="_blank" class="btn-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.882l6.198-1.625A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.359-.213-3.68.965.981-3.595-.234-.37A9.818 9.818 0 1112 21.818z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://t.me/selena_mag_praktic" target="_blank" class="btn-tg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+            Telegram
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-val">25+</div>
+            <div class="hero-stat-label">лет практики</div>
+          </div>
+          <div>
+            <div class="hero-stat-val">1000+</div>
+            <div class="hero-stat-label">помогла людям</div>
+          </div>
+          <div>
+            <div class="hero-stat-val">24/7</div>
+            <div class="hero-stat-label">на связи</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-placeholder">
+          <div class="photo-icon">🔮</div>
+          <span>фото Селены</span>
+        </div>
+        <div class="hero-photo-badge">✦ Консультация в день обращения</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-tag">Чем могу помочь</div>
+      <h2 class="section-title">Услуги <em>ясновидящей</em></h2>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">🃏</div>
+        <div class="service-name">Гадание</div>
+        <div class="service-desc">Узнайте правду о прошлом, настоящем и будущем. Карты, рунный расклад, диагностика ситуации.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🕯️</div>
+        <div class="service-name">Приворот</div>
+        <div class="service-desc">Вернуть и привязать любимого человека навсегда. Работа с тонкими планами и энергетикой пары.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌑</div>
+        <div class="service-name">Снятие порчи</div>
+        <div class="service-desc">Диагностика и снятие порчи, сглаза, венца безбрачия и родового проклятия.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💔</div>
+        <div class="service-name">Возврат любимых</div>
+        <div class="service-desc">Помогу вернуть мужа или жену, наладить отношения, устранить разлучницу.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <div class="service-name">Денежная магия</div>
+        <div class="service-desc">Открытие денежных каналов, привлечение удачи в бизнесе, снятие финансовых блоков.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <div class="service-name">Защита и обереги</div>
+        <div class="service-desc">Защита от врагов, зависти и негативного влияния. Создание индивидуальных оберегов.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-bg">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="section-tag">О ясновидящей</div>
+        <h2 class="section-title">Кто такая <em>Селена</em></h2>
+        <div class="about-text">
+          <p>Меня зовут Селена. <strong>Более 25 лет</strong> я занимаюсь чёрной и белой магией — помогаю тем, кто оказался в сложной жизненной ситуации.</p>
+          <p>Способности, заложенные в моём роду природой по воле Высших сил, позволяют мне увидеть проблему, обнаружить её первопричины и нейтрализовать последствия в считанные дни.</p>
+          <p>Работаю дистанционно — <strong>помогаю людям по всей России и за рубежом.</strong></p>
+        </div>
+        <div class="about-quote">«Каждый человек должен жить, а не существовать»</div>
+      </div>
+      <div class="about-stats reveal">
+        <div class="about-stat">
+          <div class="about-stat-val">25+</div>
+          <div class="about-stat-label">лет в практике магии</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-val">1000+</div>
+          <div class="about-stat-label">людей получили помощь</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-val">24/7</div>
+          <div class="about-stat-label">на связи в WhatsApp и Telegram</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-val">100%</div>
+          <div class="about-stat-label">конфиденциальность</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-tag">Как проходит работа</div>
+      <h2 class="section-title">Четыре <em>шага</em> к результату</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Обращение</div>
+        <div class="step-desc">Пишите в WhatsApp или Telegram — опишите ситуацию в нескольких словах.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Диагностика</div>
+        <div class="step-desc">Я провожу диагностику ситуации и определяю первопричину проблемы.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Работа</div>
+        <div class="step-desc">Провожу необходимые обряды и ритуалы. Отчитываюсь о каждом этапе.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Результат</div>
+        <div class="step-desc">Вы получаете результат и поддержку на протяжении всего периода работы.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-tag">Отзывы</div>
+      <h2 class="section-title">Что говорят <em>клиенты</em></h2>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Обращался к Селене за помощью в делах — бизнес не шёл. После работы с ней почувствовал небывалый подъём и уверенность. Успех сам нашёл меня.</div>
+        <div class="review-author">Андрей</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Не могла понять что со мной — разладились отношения, неприятности на работе. Оказалось — порча. Если бы не Селена, которая буквально вытащила меня из тьмы...</div>
+        <div class="review-author">София</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Муж ушёл к другой. Казалось, всё кончено. Селена вернула его за три недели. Сейчас у нас всё хорошо, даже лучше чем раньше. Благодарна безмерно.</div>
+        <div class="review-author">Марина</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="cta-title">Готовы изменить<br><em>ход событий?</em></div>
+      <p class="cta-sub">Напишите мне прямо сейчас — первая консультация и диагностика ситуации бесплатно.</p>
+      <div class="cta-btns">
+        <a href="https://api.whatsapp.com/send?phone=79171698545&text=Здравствуйте, хочу записаться на консультацию" target="_blank" class="btn-wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.882l6.198-1.625A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.359-.213-3.68.965.981-3.595-.234-.37A9.818 9.818 0 1112 21.818z"/></svg>
+          Написать в WhatsApp
+        </a>
+        <a href="https://t.me/selena_mag_praktic" target="_blank" class="btn-tg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+          Написать в Telegram
+        </a>
+      </div>
+      <p style="font-size:12px;color:var(--text-soft);margin-top:28px;">* Результат может отличаться в каждом индивидуальном случае</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-icon" id="modal-icon"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+    <a href="https://api.whatsapp.com/send?phone=79171698545&text=Здравствуйте, хочу узнать подробнее об услуге" target="_blank" class="modal-btn">
+      Записаться на консультацию →
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Ясновидящая Селена. Все права защищены.</p>
+    <p style="margin-top:8px;">Сайт разработан — <a href="https://t.me/vixori_studio" target="_blank">vixori_studio</a></p>
+  </div>
+</footer>
+
+<script>
+
+  // Service cards animation on scroll
+  const serviceCards = document.querySelectorAll('.service-card');
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, Array.from(serviceCards).indexOf(entry.target) * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+  serviceCards.forEach(card => cardObserver.observe(card));
+
+  // Modal data
+  const services = {
+    'Гадание': {
+      icon: '🃏',
+      desc: 'Узнайте правду о прошлом, настоящем и будущем. Я провожу гадание на картах Таро, рунный расклад и общую диагностику вашей ситуации. Вы получите чёткие ответы на волнующие вопросы — о любви, карьере, здоровье, семье и судьбе. Результат — понимание ситуации и путь к решению.'
+    },
+    'Приворот': {
+      icon: '🕯️',
+      desc: 'Вернуть и навсегда привязать любимого человека. Работаю с тонкими планами и энергетикой пары. Приворот выполняется строго индивидуально — после диагностики совместимости. Результат ощущается в течение 3–21 дня. Полная конфиденциальность.'
+    },
+    'Снятие порчи': {
+      icon: '🌑',
+      desc: 'Диагностика и снятие порчи, сглаза, венца безбрачия и родового проклятия. Если в вашей жизни всё идёт не так — неудачи в делах, болезни, проблемы в отношениях — возможно, на вас направлен негатив. Провожу полную диагностику и очищение.'
+    },
+    'Возврат любимых': {
+      icon: '💔',
+      desc: 'Помогу вернуть мужа или жену, наладить отношения после измены, устранить разлучницу. Работаю даже в самых сложных ситуациях — когда партнёр ушёл к другому, когда связь длилась годами, когда кажется что всё потеряно. У меня более 1000 успешных случаев.'
+    },
+    'Денежная магия': {
+      icon: '💰',
+      desc: 'Открытие денежных каналов, привлечение удачи в бизнесе, снятие финансовых блоков. Если деньги не задерживаются, бизнес не идёт, постоянные долги — это не случайность. Провожу обряды на привлечение достатка, удачи и финансового потока.'
+    },
+    'Защита и обереги': {
+      icon: '🌿',
+      desc: 'Защита от врагов, зависти и негативного влияния. Создание индивидуальных оберегов под вашу ситуацию. Если вы чувствуете постоянную тревогу, враждебность окружающих или нестабильность — помогу создать надёжную защиту для вас и вашей семьи.'
+    }
+  };
+
+  function openModal(name) {
+    const s = services[name];
+    if (!s) return;
+    document.getElementById('modal-icon').textContent = s.icon;
+    document.getElementById('modal-title').textContent = name;
+    document.getElementById('modal-desc').textContent = s.desc;
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Add click handlers to service cards
+  serviceCards.forEach(card => {
+    const name = card.querySelector('.service-name').textContent;
+    card.addEventListener('click', () => openModal(name));
+  });
+  // Stars
+  const canvas = document.getElementById('stars-canvas');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function createStars() {
+    stars = [];
+    for (let i = 0; i < 180; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.2,
+        alpha: Math.random(),
+        speed: Math.random() * 0.008 + 0.002,
+        dir: Math.random() > 0.5 ? 1 : -1
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      s.alpha += s.speed * s.dir;
+      if (s.alpha >= 1 || s.alpha <= 0) s.dir *= -1;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(drawStars);
+  }
+
+  resize();
+  createStars();
+  drawStars();
+  window.addEventListener('resize', () => { resize(); createStars(); });
+
+  // Reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
