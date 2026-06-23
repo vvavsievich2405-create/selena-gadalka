@@ -152,6 +152,47 @@
     max-width: 420px;
   }
 
+  .hero-call-cta {
+    background: #25D366;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 28px 32px;
+    max-width: 500px;
+    margin-top: 12px;
+  }
+
+  .hero-call-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .hero-call-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 18px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .hero-call-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #25D366;
+    padding: 14px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .hero-call-btn:hover { 
+    background: #f0f0f0;
+    transform: translateY(-2px);
+  }
+
   .hero-btns {
     display: flex;
     gap: 14px;
@@ -617,12 +658,6 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/110071322" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=110071322","ym");ym(110071322,"init",{clickmap:true,trackHash:true,accurateTrackBounce:true,webvisor:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110071322" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <canvas id="stars-canvas"></canvas>
@@ -651,16 +686,11 @@
           Ясновидящая
           <span class="italic">Селена</span>
         </h1>
-        <p class="hero-sub">Более 25 лет помогаю людям вернуть любовь, снять порчу и изменить ход судьбы. Консультация — в день обращения.</p>
-        <div class="hero-btns">
-          <a href="https://api.whatsapp.com/send?phone=79171698545&text=Здравствуйте" target="_blank" class="btn-wa">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.882l6.198-1.625A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.359-.213-3.68.965.981-3.595-.234-.37A9.818 9.818 0 1112 21.818z"/></svg>
-            WhatsApp
-          </a>
-          <a href="https://t.me/mag_praktic" target="_blank" class="btn-tg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
-            Telegram
-          </a>
+        <p class="hero-sub">Более 25 лет помогаю людям вернуть любовь, снять порчу и изменить ход судьбы. Консультация — в день обращения, первая консультация и диагностика ситуации бесплатно.</p>
+        <div class="hero-call-cta">
+          <div class="hero-call-label">Позвонить</div>
+          <div class="hero-call-number">+7 917 169-85-45</div>
+          <a href="tel:+79171698545" class="hero-call-btn">☎ Звонок</a>
         </div>
         <div class="hero-stats">
           <div>
